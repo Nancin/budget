@@ -216,7 +216,7 @@ body {
 	background: var(--bg);
 	color: var(--text);
 	min-height: 100vh;
-	padding-bottom: 5rem;
+	padding-bottom: 4rem;
 	background-image: radial-gradient(ellipse 80% 40% at 50% -10%, rgba(26, 111, 255, .12), transparent);
 }
 
@@ -241,7 +241,8 @@ body {
 	gap: 10px;
 	font-size: 15px;
 	font-weight: 700;
-	letter-spacing: -.02em
+	letter-spacing: -.02em;
+	color: var(--text)
 }
 
 .nav-logo {
@@ -285,6 +286,7 @@ body {
 	font-size: 12px;
 	color: var(--text2);
 	font-weight: 500;
+	transition: border-color .2s;
 }
 
 .nav-date input[type=date] {
@@ -297,6 +299,16 @@ body {
 	cursor: pointer;
 	outline: none;
 	appearance: none;
+}
+
+.nav-date:hover input[type=date] {
+    color: var(--text);
+}
+
+.nav-date:hover {
+    background: var(--surface3);
+    border-color: var(--b);
+	color: var(--text);
 }
 
 .nav-date input[type=date]::-webkit-calendar-picker-indicator {
@@ -344,6 +356,11 @@ body {
 	border-radius: 20px;
 	padding: 3px;
 	gap: 0;
+	transition: border-color .2s;
+}
+
+.tog-pill:hover {
+    border-color: var(--b);
 }
 
 .tog-pill-thumb {
@@ -492,7 +509,7 @@ body {
 	align-items: center;
 	gap: 12px;
 	margin-top: .75rem;
-	flex-wrap: wrap
+	flex-wrap: wrap;
 }
 
 .hero-pill {
@@ -502,7 +519,7 @@ body {
 	padding: 4px 11px;
 	border-radius: 20px;
 	font-size: 12px;
-	font-weight: 700
+	font-weight: 700;
 }
 
 .pill-g {
@@ -560,7 +577,7 @@ body {
 	font-size: 11px;
 	color: var(--text2);
 	margin-top: 6px;
-	font-weight: 500
+	font-weight: 500;
 }
 
 .hero-stats {
@@ -572,7 +589,7 @@ body {
 .hstat {
 	padding: 1rem 1.25rem;
 	border-right: 1px solid var(--border);
-	transition: background .2s
+	transition: background .2s;
 }
 
 .hstat:last-child {
@@ -603,8 +620,10 @@ body {
 .chart-section {
 	background: var(--surface);
 	border: 1px solid var(--border);
-	border-radius: 0;
+	border-radius: var(--rad-xl);
 	overflow: hidden;
+	margin-bottom: 1.25rem;
+	animation: fadeUp .5s cubic-bezier(.22, 1, .36, 1) .05s both;
 }
 
 .chart-wrap {
@@ -821,7 +840,7 @@ body {
 	height: 1.5px;
 	top: 0;
 	background: linear-gradient(90deg, transparent, rgba(26, 111, 255, .35), transparent);
-	animation: scanline 6s linear infinite;
+	animation: scanline 4s linear infinite;
 	pointer-events: none;
 	opacity: .5;
 }
